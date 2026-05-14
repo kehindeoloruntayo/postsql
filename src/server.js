@@ -9,7 +9,7 @@ import watchlistRoutes from "./routes/watchlistRoutes.js";
 
 config(); // Load environment variables from .env file
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
