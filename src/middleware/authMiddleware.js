@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken';
 import { prisma } from '../config/db.js';
-// import asyncHandler from 'express-async-handler';
-// import User from '../models/userModel.js';
 
 // Read the token from the request
 // Check if the token is valid
@@ -16,7 +14,7 @@ export const authMiddleware = async (req, res, next) => {
     }
 
     if (!token) {
-        res.status(401).json({ message: 'Not authorized, no token' });
+        return res.status(401).json({ message: 'Not authorized, no token' });
     }
 
     try {
@@ -31,6 +29,6 @@ export const authMiddleware = async (req, res, next) => {
         req.user = user;
         next();
     } catch (err) {
-        res.status(401).json({ message: 'Not authorized, token failed' });
+        return res.status(401).json({ message: 'Not authorized, token failed' });
     }
 };

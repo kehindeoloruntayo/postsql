@@ -72,4 +72,4 @@ app.get("/hello", (req, res) => {
 // AUTH - Signup, Login, Logout
 // MOVIE - GETTING ALL MOVIES
 // USER - Profiles
-// Watchlist - 
+// Watchlist - Add to watchlist, update watchlist item, remove from watchlist, get watchlist items
